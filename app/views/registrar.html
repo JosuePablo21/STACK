@@ -1,0 +1,22 @@
+<form novalidate class="simple-form">
+	<h3>Registar Nuevo Alumno</h3>
+	
+	<div class="row">
+
+	<div class="col-md-3">
+		Nombre  <input type="text" ng-model="estudiante.nombre" class="form-control" placeholder="Ingrese Nombre" id="txtnombre"> 
+	Apellido <input type="text" ng-model="estudiante.apellido" class="form-control" placeholder="Ingrese Apellido" id="txtapellido"> 
+	Telefono <input type="text" ng-model="estudiante.telefono" class="form-control" placeholder="Ingrese Telefono" id="txttelefono"> 	
+	Curso <input type="text" ng-model="estudiante.curso" class="form-control" placeholder="Curso a Ingresar" id="txtcurso"> 
+	Punteo <input type="text" ng-model="estudiante.puntos" class="form-control" placeholder="Puntuacion obtenida" id="txtpuntos"> <br>
+	</div>
+
+	</div>
+
+
+	
+
+	<input type="button" ng-click="RegistrarEstudiante(estudiante)" value="Registrar Alumno"  class="button button1">
+
+
+</form> 

@@ -1,0 +1,59 @@
+
+
+<center><h3>Buscar</h3></center>
+
+<input type="text" ng-model="buscar" placeholder="Busqueda" class="form-control" >
+
+<center><h3>Listado de Alumnos</h3></center>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Telefono</th>
+			<th>Curso</th>
+			<th>Puntuacion</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="estudiante in lista_estudiante | filter:buscar ">
+
+			<td  ng-model="estudiante.nombre" ng-hide="editMode">{{estudiante.nombre}}</td>
+			
+			<td ng-show="editMode"  ng-model="estudiante.nombre" > <input type="text"  ng-model="estudiante.nombre" > 
+			</td>
+
+			<td  ng-model="estudiante.apellido" ng-hide="editMode">{{estudiante.apellido}}</td>
+			<td ng-show="editMode"  ng-model="estudiante.apellido" > <input type="text"  ng-model="estudiante.apellido" > 
+			</td>
+
+			<td  ng-model="estudiante.telefono" ng-hide="editMode">{{estudiante.telefono}}</td>
+			<td ng-show="editMode"  ng-model="estudiante.telefono" > <input type="text"  ng-model="estudiante.telefono" > 
+			</td>
+
+			<td  ng-model="estudiante.curso" ng-hide="editMode">{{estudiante.curso}}</td>
+			<td ng-show="editMode"  ng-model="estudiante.curso" > <input type="text"  ng-model="estudiante.curso" > 
+			</td>
+
+			<td  ng-model="estudiante.puntos" ng-hide="editMode">{{estudiante.puntos}}</td>
+			<td ng-show="editMode"  ng-model="estudiante.puntos" > <input type="text"  ng-model="estudiante.puntos" > 
+			</td>
+
+
+			<td>
+				<input type="button" value="Eliminar" ng-click="EliminarRegistro(estudiante)" class="button button3">
+
+				<input type="button" value="Actualizar" ng-click="editMode = true; Editar(estudiante)" class="button button2">
+
+				<br><br>
+
+				<input type="button" value="Cancelar" ng-click="editMode = false; Cancelar();  " ng-show="editMode" class="btn btn-default">
+				
+				<input type="button" value="Guardar" ng-click="editMode = false; ActualizarEstudiante(estudiante)" ng-show="editMode" class="btn btn-default">
+
+			</td>
+
+		</tr>
+	</tbody>
+</table>
